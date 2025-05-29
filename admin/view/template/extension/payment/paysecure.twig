@@ -1,0 +1,15 @@
+<form action="{{ action }}" method="post">
+  <div class="form-group">
+    <label class="control-label">API Key</label>
+    <input type="text" name="payment_paysecure_api_key" value="{{ payment_paysecure_api_key }}" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label class="control-label">Status</label>
+    <select name="payment_paysecure_status" class="form-control">
+      <option value="1" {% if payment_paysecure_status %}selected{% endif %}>Enabled</option>
+      <option value="0" {% if not payment_paysecure_status %}selected{% endif %}>Disabled</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Save</button>
+  <a href="{{ cancel }}" class="btn btn-default">Cancel</a>
+</form>
